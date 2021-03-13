@@ -96,5 +96,66 @@ def tables(timeperiod):
             assets.append(row[2])
     return jsonify(bank_name,country,assets)
 
+@app.route('/bankcountrydropdown/')
+def bankcountrydropdown():
+    '''Returns a list of all distinct countries.'''
+    countries = []
+    with engine.connect() as con:
+        rs = con.execute('SELECT DISTINCT "Country" FROM banks')
+        for row in rs:
+            countries.append(row[0])
+    return jsonify(countries)
+
+@app.route('/timecountrydropdown/')
+def timecountrydropdown():
+    '''Returns a list of all distinct time periods.'''
+    timeperiods = []
+    with engine.connect() as con:
+        rs = con.execute('SELECT DISTINCT "Balance Sheet Date" FROM banks')
+        for row in rs:
+            timeperiods.append(row[0])
+    return jsonify(timeperiods)
+
+@app.route('/tacountrysumdropdown/')
+def tacountrysumdropdown():
+    '''Returns a list of all distinct countries.'''
+    countries = []
+    with engine.connect() as con:
+        rs = con.execute('SELECT DISTINCT "Country" FROM banks')
+        for row in rs:
+            countries.append(row[0])
+    return jsonify(countries)
+
+@app.route('/tatimesumdropdown/')
+def tatimesumdropdown():
+    '''Returns a list of all distinct time periods.'''
+    timeperiods = []
+    with engine.connect() as con:
+        rs = con.execute('SELECT DISTINCT "Balance Sheet Date" FROM banks')
+        for row in rs:
+            timeperiods.append(row[0])
+    return jsonify(timeperiods)
+
+@app.route('/bankassetsdropdown/')
+def bankassetsdropdown():
+    '''Returns a list of all distinct banks.'''
+    banks = []
+    with engine.connect() as con:
+        rs = con.execute('SELECT DISTINCT "Bank" FROM banks')
+        for row in rs:
+            banks.append(row[0])
+    return jsonify(banks)
+
+@app.route('/banktabledropdown/')
+def banktabledropdown():
+    '''Returns a list of all distinct time periods.'''
+    timeperiods = []
+    with engine.connect() as con:
+        rs = con.execute('SELECT DISTINCT "Balance Sheet Date" FROM banks')
+        for row in rs:
+            timeperiods.append(row[0])
+    return jsonify(timeperiods)
+
+
 if __name__ == '__main__':
     app.run(debug=True)

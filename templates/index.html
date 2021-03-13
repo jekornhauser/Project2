@@ -8,11 +8,35 @@
     <link rel="shortcut icon" href="#">
 </head>
 <body>
+    <table>
+        <thead>
+        <tr>
+          <th>Bank Name</th>
+          <th>Country</th>
+          <th>Total Assets (US$bn)</th>  
+        </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+        <select id="banktablelist" onchange="banktablechange(this.value)"></select>
+    </table>
     <div id="countrybankcountline"></div>
-    <div id="timebankcountbar"></div>
-    <div id="tacountrysumline"></div>
-    <div id="tatimesumbar"></div>
-    <div id="bankassetsline"></div>
+    <div id="countrybankdropdown">
+        <select id="countrybanklist" onchange="countrybankchange(this.value)"></select>
+    </div>
+    <div id="timebankcountbar">
+        <select id="timebanklist" onchange="timebankchange(this.value)"></select>
+    </div>
+    <div id="tacountrysumline">
+        <select id="countrysumlist" onchange="countrysumchange(this.value)"></select>
+    </div>
+    <div id="tatimesumbar">
+        <select id="timesumlist" onchange="timesumchange(this.value)"></select>
+    </div>
+    <div id="bankassetsline">
+        <select id="bankassetslist" onchange="bankassetschange(this.value)"></select>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.js"></script>
     <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
     <script src="static/js/app.js"></script>
