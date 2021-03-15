@@ -14,7 +14,7 @@ function buildCountryBankCountLine(country) {
            var barchartlayout = {
             title: "The number of top banks in a country over time.",
             autosize: false,
-            width: 1500,
+            width: 750,
             height: 500,
             xaxis: {
                 title: {
@@ -48,7 +48,7 @@ function buildTimeBankCountBar(timeperiod) {
            var barchartlayout = {
             title: "The number of banks in each country at the selected time.",
             autosize: false,
-            width: 1500,
+            width: 750,
             height: 500,
             xaxis: {
                 title: {
@@ -83,7 +83,7 @@ function buildCountrySumLine(country) {
            var barchartlayout = {
             title: "The rate of change in total assets in the selected country over time.",
             autosize: false,
-            width: 1500,
+            width: 750,
             height: 500,
             xaxis: {
                 title: {
@@ -118,7 +118,7 @@ function buildTimeSumBar(timeperiod) {
            var barchartlayout = {
             title: "The sum of assets in each country at the selected time.",
             autosize: false,
-            width: 1500,
+            width: 750,
             height: 500,
             xaxis: {
                 title: {
@@ -152,7 +152,7 @@ function buildBankAssetsLine(bank) {
            var barchartlayout = {
             title: "The change in assets over time at the selected bank.",
             autosize: false,
-            width: 1500,
+            width: 750,
             height: 500,
             xaxis: {
                 title: {
@@ -327,3 +327,53 @@ function init(){
 
 };
 init();
+
+us_gdp = [16200000000000,16800000000000,17500000000000,18200000000000,18700000000000,19500000000000]
+dates = [2012,2013,2014,2015,2016,2017]
+var barchartdata = [{
+    x: dates,
+    y: us_gdp,
+    type: "scatter"
+   }];
+   var barchartlayout = {
+    title: "The change in United States GDP over time.",
+    autosize: false,
+    width: 750,
+    height: 500,
+    xaxis: {
+        title: {
+            text:'Date'
+        }
+    },
+    yaxis: {
+        title: {
+            text:'GDP in US$'
+        }
+    }
+   };
+   Plotly.newPlot("usgdp",barchartdata, barchartlayout);
+
+   china_gdp = [8530000000000,9570000000000,10500000000000,11100000000000,11200000000000,12300000000000]
+dates = [2012,2013,2014,2015,2016,2017]
+var barchartdata = [{
+    x: dates,
+    y: china_gdp,
+    type: "scatter"
+   }];
+   var barchartlayout = {
+    title: "The change in China GDP over time.",
+    autosize: false,
+    width: 750,
+    height: 500,
+    xaxis: {
+        title: {
+            text:'Date'
+        }
+    },
+    yaxis: {
+        title: {
+            text:'GDP in US$'
+        }
+    }
+   };
+   Plotly.newPlot("chinagdp",barchartdata, barchartlayout);
